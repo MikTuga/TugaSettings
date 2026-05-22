@@ -69,7 +69,7 @@ jobs:
           fi
           mkdir -p dist
           cp "$src" "dist/${APP_ID}-release.apk"
-          TAG="${REF_NAME:-$INPUT_TAG}"
+          TAG="${INPUT_TAG:-$REF_NAME}"
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
           echo "apk=dist/${APP_ID}-release.apk" >> "$GITHUB_OUTPUT"
           echo "sha256=$(sha256sum dist/${APP_ID}-release.apk | awk '{print $1}')" >> "$GITHUB_OUTPUT"
