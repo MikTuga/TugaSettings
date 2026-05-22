@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_root"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/text_primary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Units section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/section_units"
+            android:textColor="@color/text_dim"
+            android:textSize="12sp"
+            android:letterSpacing="0.15"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:background="@drawable/card_background"
+            android:layout_marginBottom="20dp">
+
+            <!-- Speed row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/label_units_speed"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:id="@+id/segSpeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/segSpeedKmh"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:minWidth="72dp"
+                        android:paddingHorizontal="14dp"
+                        android:text="@string/unit_kmh"
+                        android:textSize="13sp"
+                        android:textColor="#FFFFFF"
+                        android:background="@drawable/segment_selected"
+                        android:stateListAnimator="@null" />
+
+                    <Space
+                        android:layout_width="6dp"
+                        android:layout_height="match_parent" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/segSpeedMph"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:minWidth="72dp"
+                        android:paddingHorizontal="14dp"
+                        android:text="@string/unit_mph"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_secondary"
+                        android:background="@drawable/segment_unselected"
+                        android:stateListAnimator="@null" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Temp row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/label_units_temp"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/segTempC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:minWidth="72dp"
+                        android:paddingHorizontal="14dp"
+                        android:text="@string/unit_celsius"
+                        android:textSize="13sp"
+                        android:textColor="#FFFFFF"
+                        android:background="@drawable/segment_selected"
+                        android:stateListAnimator="@null" />
+
+                    <Space
+                        android:layout_width="6dp"
+                        android:layout_height="match_parent" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/segTempF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:minWidth="72dp"
+                        android:paddingHorizontal="14dp"
+                        android:text="@string/unit_fahrenheit"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_secondary"
+                        android:background="@drawable/segment_unselected"
+                        android:stateListAnimator="@null" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Distance row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/label_units_distance"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/segDistM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:minWidth="72dp"
+                        android:paddingHorizontal="14dp"
+                        android:text="@string/unit_meters"
+                        android:textSize="13sp"
+                        android:textColor="#FFFFFF"
+                        android:background="@drawable/segment_selected"
+                        android:stateListAnimator="@null" />
+
+                    <Space
+                        android:layout_width="6dp"
+                        android:layout_height="match_parent" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/segDistFt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:minWidth="72dp"
+                        android:paddingHorizontal="14dp"
+                        android:text="@string/unit_feet"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_secondary"
+                        android:background="@drawable/segment_unselected"
+                        android:stateListAnimator="@null" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Paths section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/section_paths"
+            android:textColor="@color/text_dim"
+            android:textSize="12sp"
+            android:letterSpacing="0.15"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:background="@drawable/card_background"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:id="@+id/rowUsbMount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_usb_mount"
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/textUsbMount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_dim"
+                        android:textSize="12sp"
+                        android:fontFamily="monospace"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnUsbMount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:minWidth="0dp"
+                    android:paddingHorizontal="16dp"
+                    android:text="@string/button_change"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_secondary"
+                    android:background="@drawable/button_outline"
+                    android:stateListAnimator="@null" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rowMusic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_music_folder"
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/textMusic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_dim"
+                        android:textSize="12sp"
+                        android:fontFamily="monospace"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnMusic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:minWidth="0dp"
+                    android:paddingHorizontal="16dp"
+                    android:text="@string/button_change"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_secondary"
+                    android:background="@drawable/button_outline"
+                    android:stateListAnimator="@null" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rowReports"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/label_reports_folder"
+                        android:textColor="@color/text_primary"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/textReports"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_dim"
+                        android:textSize="12sp"
+                        android:fontFamily="monospace"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnReports"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:minWidth="0dp"
+                    android:paddingHorizontal="16dp"
+                    android:text="@string/button_change"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_secondary"
+                    android:background="@drawable/button_outline"
+                    android:stateListAnimator="@null" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- System section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/section_system"
+            android:textColor="@color/text_dim"
+            android:textSize="12sp"
+            android:letterSpacing="0.15"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:background="@drawable/card_background"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/label_auto_update"
+                    android:textColor="@color/text_primary"
+                    android:textSize="15sp" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchAutoUpdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

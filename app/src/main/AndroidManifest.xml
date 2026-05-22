@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <permission
+        android:name="com.miktuga.permission.READ_SETTINGS"
+        android:protectionLevel="normal"
+        android:label="@string/perm_read_settings_label"
+        android:description="@string/perm_read_settings_desc" />
+
+    <permission
+        android:name="com.miktuga.permission.WRITE_SETTINGS"
+        android:protectionLevel="normal"
+        android:label="@string/perm_write_settings_label"
+        android:description="@string/perm_write_settings_desc" />
+
+    <uses-permission android:name="com.miktuga.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.miktuga.permission.WRITE_SETTINGS" />
+
+    <!-- FolderPickerActivity lists /storage/* — listFiles() returns null without this on API 22. -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TugaStore">
+
+        <activity
+            android:name=".SettingsActivity"
+            android:screenOrientation="landscape"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".FolderPickerActivity"
+            android:screenOrientation="landscape"
+            android:exported="false" />
+
+        <provider
+            android:name=".SettingsProvider"
+            android:authorities="com.miktuga.settings.provider"
+            android:exported="true"
+            android:readPermission="com.miktuga.permission.READ_SETTINGS"
+            android:writePermission="com.miktuga.permission.WRITE_SETTINGS" />
+    </application>
+</manifest>

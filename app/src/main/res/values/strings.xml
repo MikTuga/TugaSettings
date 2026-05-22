@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Tuga Settings</string>
+    <string name="perm_read_settings_label">Чтение настроек Tuga</string>
+    <string name="perm_read_settings_desc">Позволяет приложениям Tuga читать общие настройки экосистемы.</string>
+    <string name="perm_write_settings_label">Запись настроек Tuga</string>
+    <string name="perm_write_settings_desc">Позволяет приложениям Tuga изменять общие настройки экосистемы.</string>
+
+    <string name="section_units">Единицы измерения</string>
+    <string name="section_paths">Пути на USB</string>
+    <string name="section_system">Система</string>
+
+    <string name="label_units_speed">Скорость</string>
+    <string name="label_units_temp">Температура</string>
+    <string name="label_units_distance">Расстояние</string>
+    <string name="label_usb_mount">Точка монтирования USB</string>
+    <string name="label_music_folder">Папка музыки</string>
+    <string name="label_reports_folder">Папка отчётов</string>
+    <string name="label_auto_update">Проверка обновлений</string>
+
+    <string name="unit_kmh">км/ч</string>
+    <string name="unit_mph">mph</string>
+    <string name="unit_celsius">°C</string>
+    <string name="unit_fahrenheit">°F</string>
+    <string name="unit_meters">м</string>
+    <string name="unit_feet">ft</string>
+
+    <string name="button_change">Изменить</string>
+    <string name="picker_title">Выберите папку</string>
+    <string name="picker_select">Выбрать</string>
+    <string name="picker_cancel">Отмена</string>
+    <string name="picker_up">…</string>
+</resources>
