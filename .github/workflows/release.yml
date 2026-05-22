@@ -88,4 +88,4 @@ jobs:
           fail_on_unmatched_files: true
           body: |
             **SHA-256:** `${{ steps.stage.outputs.sha256 }}`
-            **Signed by:** MikTuga release key (SHA-1 `06ebb7ac36717017003232f471908c97d3407c1f`)
+            **Signed by:** MikTuga release key (SHA-1 `e2ded6293acc1541ffd8962b3a28a69d3835bbd0`)
