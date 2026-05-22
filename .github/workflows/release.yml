@@ -41,7 +41,12 @@ jobs:
             echo "::error::KEYSTORE_BASE64 secret missing — central app must be release-signed."
             exit 1
           fi
-          printf '%s' "$KEYSTORE_BASE64" | base64 -d > tuga-release.jks
+          # tolerate any whitespace in the secret value
+          printf '%s' "$KEYSTORE_BASE64" | tr -d '[:space:]' | base64 -d > tuga-release.jks
+          if [ ! -s tuga-release.jks ]; then
+            echo "::error::keystore decode produced empty file"
+            exit 1
+          fi
           umask 077
           {
             printf 'storeFile=tuga-release.jks\n'
